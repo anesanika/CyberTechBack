@@ -60,6 +60,8 @@ REST_FRAMEWORK = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+ALLOWED_HOSTS = ['cybertechback.onrender.com']
+
 CSRF_TRUSTED_ORIGINS = [
    "https://cyberputech.vercel.app"
 ]
