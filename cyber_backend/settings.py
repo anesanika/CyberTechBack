@@ -65,6 +65,12 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
    "https://cyberputech.vercel.app",
 ]
+import os
+from dotenv import load_dotenv
+
+
+FRONTEND_SECRET = os.getenv('FRONTEND_SECRET')
+
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -76,6 +82,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cyber_backend.middleware.block_public_api.BlockPublicAPI'
 ]
 
 ROOT_URLCONF = 'cyber_backend.urls'

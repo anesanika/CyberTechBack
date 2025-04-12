@@ -18,10 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponseNotFound
+
+
+def hide_root(request):
+    return HttpResponseNotFound()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("user.urls")),
+    path('', hide_root),  # root URL-ს დავაბლოკავთ
     path('store/', include("products.urls"))
 ]
 if settings.DEBUG:
