@@ -12,6 +12,6 @@ class BlockPublicAPI:
             expected_token = os.getenv("FRONTEND_SECRET")
 
             if frontend_token != expected_token:
-                return HttpResponseNotFound()  # return 404 if token doesn't match
+                return HttpResponseNotFound()
 
         return self.get_response(request)
