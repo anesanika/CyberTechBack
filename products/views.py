@@ -18,4 +18,3 @@ class ProducViews(ModelViewSet):
 class CategoryView(ModelViewSet):
   queryset = Category.objects.all()
   serializer_class = CategorySerializer
-  
