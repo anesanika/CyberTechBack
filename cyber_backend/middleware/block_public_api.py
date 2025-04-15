@@ -6,7 +6,7 @@ class BlockPublicAPI:
         self.get_response = get_response
 
     def __call__(self, request):
-        api_paths = ['/api/', '/api/token/', '/api/token/refresh/']
+        api_paths = ['/api/', '/api/token/', '/api/token/refresh/', "/store/", "/store/products/", "/store/category/"]
         if any(request.path.startswith(p) for p in api_paths):
             frontend_token = request.headers.get("x-frontend-secret")
             expected_token = os.getenv("FRONTEND_SECRET")
